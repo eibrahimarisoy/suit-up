@@ -1,0 +1,23 @@
+   {% load static %}
+   <!-- ##### Breadcumb Area Start ##### -->
+   <div class="breadcumb_area bg-img"
+       style="background-image: url({% static 'img/bg-img/breadcumb.jpg' %});margin-top:85px;">
+       <div class="container h-100">
+           <div class="row h-100 align-items-center">
+               <div class="col-12">
+                   <div class="page-title text-center">
+                       {% if sub_category %}
+                       <h2>{{ sub_category.get_gender_display }} - {{ sub_category.title }}</h2>
+                       {% endif %}
+                       {% if category %}
+                       <h2>{{ category.title }}</h2>
+                       {% endif %}
+                       {% if banner_tag %}
+                       <h2>{{ banner_tag }}</h2>
+                       {% endif %}
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   <!-- ##### Breadcumb Area End ##### -->

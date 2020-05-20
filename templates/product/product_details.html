@@ -1,0 +1,31 @@
+{% extends "base/base.html" %}
+
+{% load static %}
+{% load thumbnail %}
+
+
+{% block content %}
+  
+
+
+<section class="single_product_details_area d-flex align-items-center" style="padding-top:85px;">
+    <!-- Single Product Thumb -->
+    <div class="single_product_thumb clearfix">
+        <div class="product_thumbnail_slides owl-carousel">
+            {% for image in product.coverimages_set.all %}
+            <img src="{{ image.image|thumbnail_url:'product_details' }}" alt="">
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Single Product Description -->
+    <div class="single_product_desc clearfix">
+        <span>{{ product.category.title }}</span>
+        <a href="#">
+            <h2>{{ product.title }}</h2>
+        </a>
+        <p class="product-price">{{ product.price }}</p>
+        <p class="product-desc">{{product.content}}</p>
+    </div>
+</section>
+
+{% endblock content %}

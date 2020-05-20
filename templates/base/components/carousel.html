@@ -1,0 +1,13 @@
+{% load thumbnail %}
+
+<section class="welcome_area bg-img background-overlay" style="background-image:url('{{ carousel.cover_image|thumbnail_url:'carousel' }}'); margin-top:85px">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="hero-content">
+                    <h2>{{ carousel.title }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

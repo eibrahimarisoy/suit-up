@@ -1,0 +1,30 @@
+{% load static %}
+{% load thumbnail %}
+
+
+
+<!-- Single Product -->
+<div class="single-product-wrapper">
+    <!-- Product Image -->
+    <div class="product-img">
+        <img src="{{ product.coverimages_set.first.image|thumbnail_url:'product_thumb' }}" alt="">
+        <!-- Hover Thumb -->
+        <img class="hover-img" src="{{ product.coverimages_set.last.image|thumbnail_url:'product_thumb' }}" alt="">
+    </div>
+    <!-- Product Description -->
+    <div class="product-description">
+        <span>{{ product.category.title }}</span>
+        <a href="{% url 'product_details' product.slug %}">
+            <h6>{{product.title}}</h6>
+        </a>
+        <p class="product-price">{{product.price}}</p>
+
+        <!-- Hover Content -->
+        <div class="hover-content">
+            <!-- Add to Cart -->
+            <div class="add-to-cart-btn">
+                <a href="#" class="btn essence-btn">Sepete Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>

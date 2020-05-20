@@ -1,0 +1,21 @@
+{% load thumbnail %}
+
+<!-- ##### Top Catagory Area Start ##### -->
+<div class="top_catagory_area section-padding-80 clearfix">
+    <div class="container">
+        <div class="row justify-content-center">
+            {% for category in categories %}
+            <!-- Single Catagory -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
+                    style="background-image: url('{{ category.cover_image|thumbnail_url:'category' }}');">
+                    <div class="catagory-content">
+                        <a href="{% url 'category_details' category.slug %}">{{ category.title }}</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- ##### Top Catagory Area End ##### -->

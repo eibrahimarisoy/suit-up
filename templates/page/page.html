@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+  
+<div class="container" style="padding-top:85px;">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">{{ page.title }}</h2>
+
+            {% if page.cover_image %}
+              <img src="{{ page.cover_image.url }}" class="w-100" alt="{{ page.title }}">
+            {% endif %}
+            <p>
+                {{ page.content | safe}}
+            </p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+{% include "base/components/banner.html" %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <!-- Single Product -->
+        {% for product in products %}
+        <div class="col-lg-4">
+            {% include "product/product.html" %}
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base/base.html" %}
+{% block content %}
+{% include "base/components/carousel.html" %}
+
+{% include "product/category.html" %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="popular-products-slides owl-carousel">
+                {% for product in products %}
+                {% include "product/product.html" %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock content %}
