@@ -6,7 +6,8 @@
         <!-- Classy Menu -->
         <nav class="classy-navbar" id="essenceNav">
             <!-- Logo -->
-            <a class="nav-brand" href="{% url 'index' %}"><img src="{% static 'img/core-img/Untitled.png' %}" alt=""></a>
+            <a class="nav-brand" href="{% url 'index' %}"><img src="{% static 'img/core-img/Untitled.png' %}"
+                    alt=""></a>
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
                 <span class="navbarToggler"><span></span><span></span><span></span></span>
@@ -18,20 +19,24 @@
                     <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                 </div>
                 <!-- Nav Start -->
-                <div class="classynav justify-content-center">
+                <div class="classynav" style="font-family: 'Ubuntu', sans-serif;">
                     <ul>
-                        <li><a href="#">Kategoriler</a>
+                        <li>Kategoriler
                             <div class="megamenu">
                                 <ul class="single-mega cn-col-4">
                                     <li class="title">Kadın Koleksiyonu</li>
                                     {% for category in women_categories %}
-                                    <li><a href="{% url 'sub_category_details' category.slug %}">{{ category.title }}</a></li>  
+                                    <li><a
+                                            href="{% url 'sub_category_details' category.slug %}">{{ category.title }}</a>
+                                    </li>
                                     {% endfor %}
                                 </ul>
                                 <ul class="single-mega cn-col-4">
                                     <li class="title">Erkek Kolesiyonu</li>
                                     {% for category in men_categories %}
-                                    <li><a href="{% url 'sub_category_details' category.slug %}">{{ category.title }}</a></li>  
+                                    <li><a
+                                            href="{% url 'sub_category_details' category.slug %}">{{ category.title }}</a>
+                                    </li>
                                     {% endfor %}
                                 </ul>
                                 <ul class="single-mega cn-col-4">
@@ -46,12 +51,34 @@
                         </li>
                         <li><a href="{% url 'dressing_cabin' %}">Giyinme Kabini</a></li>
                         <li><a href="{% url 'about' %}">Hakkımızda</a></li>
-                        <li><a href="{% url 'contact' %}">İletişim</a></li>  
+                        <li><a href="{% url 'contact' %}">İletişim</a></li>
                     </ul>
                 </div>
                 <!-- Nav End -->
             </div>
         </nav>
+        <!-- Header Meta Data -->
+        <div class="header-meta d-flex clearfix justify-content-end">
+            <!-- Search Area -->
+            <div class="search-area">
+                <form action="#">
+                    <input  name="search" id="headerSearch" placeholder="Ara">
+                    <button ><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+            <!-- Favourite Area -->
+            <div class="favourite-area">
+                <a href="#"><img src="{% static 'img/core-img/heart.svg' %}" alt=""></a>
+            </div>
+            <!-- User Login Info -->
+            <div class="user-login-info">
+                <a href="#"><img src="{% static 'img/core-img/user.svg' %}" alt=""></a>
+            </div>
+            <!-- Cart Area -->
+            <div class="cart-area">
+                <a href="#" id="essenceCartBtn"><img src="{% static 'img/core-img/bag.svg' %}" alt=""> <span></span></a>
+            </div>
+        </div>
     </div>
 </header>
 <!-- ##### Header Area End ##### -->

@@ -1,0 +1,27 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<!-- LOAD PAGE -->
+
+{% include "base/components/navbar.html" %}
+
+<!-- 404 -->
+
+        <div class="container mb-5" style="padding-top: 85px;">
+
+            <div class="row mb-5">
+
+                <div class="col-12 col-md-12" style="padding-top: 85px;padding-bottom: 85px;">
+                    <div class="text-center">
+                        <h1 class="title">404</h1>
+                        <h3 class="text-secondary">Maalesef böyle bir sayfamız bulunmamaktadır.</h3>
+                        <a href="{% url 'index' %}" class="btn btn-primary">Anasayfaya Dön</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

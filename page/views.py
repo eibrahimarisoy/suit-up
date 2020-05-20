@@ -73,3 +73,7 @@ def category_details(request, slug):
     context['category'] = get_object_or_404(Category, slug=slug)
     context['products'] = products
     return render(request, 'product/sub_category_details.html', context)
+
+
+def error_404_view(request, exception):
+    return render(request, 'page/page-404.html')
